@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ProjectBackEnd
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        tier: backend
+        app: dice
+    spec:
+      containers:
+      - name: backend
+        image: bilalbokharee/diceproject01
+        ports:
+        - containerPort: 8080
+          name: tcp
